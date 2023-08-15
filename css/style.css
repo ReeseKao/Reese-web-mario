@@ -1,0 +1,697 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+body {
+    font-family: 'Catamaran', sans-serif;
+    line-height: 1;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    text-decoration: none;
+    background-color: white;
+    color: #070707;
+    font-size: 1.25rem;
+    font-weight: 800;
+    border-radius: 2.5rem;
+    /* 字距 */
+    letter-spacing: 0.05rem;
+    /* 加上透明邊框，hover邊框才不會動 */
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #070707;
+    border: 2px solid white;
+    /* 漸變速度 */
+    transition: all .35s;
+}
+
+/* banner */
+#banner {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/bg-pattern-logos.png), linear-gradient(15deg, #b20722 16%, #e70112 76%);
+    /* 要先給絕對定位 */
+    position: relative;
+    /* 超出範圍隱藏 */
+    overflow: hidden;
+}
+
+#banner::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 200px;
+    background-color: #e70112;
+    /* 剪裁: polygon(左上角, 右上角, 右下角, 左下角) => 多邊形()*/
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
+
+#banner .row {
+    display: flex;
+    width: 80%;
+}
+
+/* banner_文案區 */
+#banner .col:first-child {
+    width: 29rem;
+}
+
+#banner h2 span {
+    display: block;
+}
+
+#banner h2 span:first-child {
+    font-size: 1.75rem;
+}
+
+#banner h2 span:last-child {
+    font-size: 11rem;
+    font-weight: 900;
+}
+
+#banner p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* banner_圖片區 */
+#banner picture {
+    position: absolute;
+
+}
+
+/* banner-1 */
+.mario1 {
+    width: 35%;
+    /* both:停在to的位置 */
+    /* ease-in-out:速度漸變 */
+    /* infinite:重複播放 */
+    animation: mario1 12s both ease-in-out infinite;
+}
+
+@keyframes mario1 {
+    0% {
+        top: 100vh;
+        right: 20%;
+        opacity: 0;
+    }
+
+    10% {
+        top: -5vh;
+        right: 20%;
+        opacity: 1;
+    }
+
+    20% {
+        top: -5vh;
+        right: 20%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 20%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 20%;
+        opacity: 0;
+    }
+}
+
+.luigi {
+    width: 20%;
+    /* 第2個秒數為delate的時間 */
+    animation: luigi 12s .35s both ease-in-out infinite;
+}
+
+@keyframes luigi {
+    0% {
+        top: 100vh;
+        right: 5%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 20vh;
+        right: 5%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 20vh;
+        right: 5%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 5%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 5%;
+        opacity: 0;
+    }
+}
+
+.brick {
+    width: 40%;
+    animation: brick 12s .45s both ease-in-out infinite;
+}
+
+@keyframes brick {
+
+    /* 從右側進來 */
+    0% {
+        top: 10vh;
+        right: -100%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 10vh;
+        right: -4%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 10vh;
+        right: -4%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 10vh;
+        right: -100%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 10vh;
+        right: -100%;
+        opacity: 0;
+    }
+}
+
+/* banner-2 */
+.mario2 {
+    width: 32%;
+    animation: mario2 12s 4s both ease-in-out infinite;
+}
+
+@keyframes mario2 {
+    0% {
+        top: 100vh;
+        right: 25%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 10vh;
+        right: 25%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 10vh;
+        right: 25%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 25%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 25%;
+        opacity: 0;
+    }
+}
+
+.peach {
+    width: 17%;
+    animation: peach 12s 4.35s both ease-in-out infinite;
+}
+
+@keyframes peach {
+    0% {
+        top: 100vh;
+        right: 17%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 25vh;
+        right: 17%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 25vh;
+        right: 17%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 17%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 17%;
+        opacity: 0;
+    }
+}
+
+.pipe {
+    width: 20%;
+    animation: pipe 12s 4.45s both ease-in-out infinite;
+}
+
+@keyframes pipe {
+    0% {
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 5vh;
+        right: 2%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 5vh;
+        right: 2%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+}
+
+/* banner-3 */
+.mario3 {
+    width: 41%;
+    animation: mario3 12s 8s both ease-in-out infinite;
+}
+
+@keyframes mario3 {
+    0% {
+        top: 100vh;
+        right: 15%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 15vh;
+        right: 15%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 15vh;
+        right: 15%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 15%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 15%;
+        opacity: 0;
+    }
+}
+
+.toad {
+    width: 12%;
+    animation: toad 12s 8.35s both ease-in-out infinite;
+}
+
+@keyframes toad {
+    0% {
+        top: 100vh;
+        right: 14%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 40vh;
+        right: 14%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 40vh;
+        right: 14%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 14%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 14%;
+        opacity: 0;
+    }
+}
+
+.star {
+    width: 22%;
+    animation: star 12s 8.45s both ease-in-out infinite;
+}
+
+@keyframes star {
+    0% {
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+
+    10% {
+        top: 15vh;
+        right: 2%;
+        opacity: 1;
+    }
+
+    20% {
+        top: 15vh;
+        right: 2%;
+        opacity: 1;
+    }
+
+    30% {
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 100vh;
+        right: 2%;
+        opacity: 0;
+    }
+}
+
+/* main主要內容區 */
+section {
+    display: flex;
+    /* 主軸垂直 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title1 {
+    font-size: 3.5rem;
+    margin-bottom: 5vh;
+}
+
+.title2 {
+    font-size: 1.6rem;
+    letter-spacing: .05rem;
+    margin: 1rem 0;
+}
+
+
+
+/* news區 */
+#news {
+    background-color: #e70112;
+    height: 85vh;
+}
+
+.list_box {
+    display: flex;
+    width: 75%;
+
+}
+
+.card_item {
+    flex: 1;
+    margin: 25px;
+    /* 相對於文字單位，網頁文字變大會隨之變動 */
+    padding: 25px;
+    /* 重複線性漸層 */
+    background-image: repeating-linear-gradient(-45deg, #302f2f, #302f2f 6px, #2a2929 0, #2a2929 12px);
+    border-radius: 15px;
+    position: relative;
+    transition: 1.5s;
+
+}
+
+#news .scenes {
+    /* x y 模糊程度 外展程度 顏色 */
+    box-shadow: 0 0 40px -10px black;
+    /* 設置旋轉元素的起始點 */
+    transform-origin: bottom;
+    transition: 1.5s;
+}
+
+#news .role {
+    position: absolute;
+    top: -4vh;
+    left: 16%;
+    width: 65%;
+    /* 設置旋轉元素的起始點 */
+    transform-origin: bottom;
+    transition: 1.5s;
+}
+
+#news .date {
+    font-size: 1.2rem;
+    margin-top: 1.5vh;
+
+}
+
+#news .content {
+    position: absolute;
+    left: 25px;
+    bottom: 6rem;
+    font-size: 1.1rem;
+    /* 行距 */
+    line-height: 1.3rem;
+    /* 字距 */
+    letter-spacing: .05rem;
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 針對文字的overflow，ellipsis=>省略號 */
+    display: -webkit-box;
+    /* -webkit-沒有被收入的屬性，可預看用 */
+    -webkit-box-orient: vertical;
+    /* 垂直方向 */
+    -webkit-line-clamp: 2;
+    /* 幾行後要開始省略 */
+    /* 轉場時間寫在原標籤，滑鼠移開時才會依序原動畫 */
+    transition: 1.5s;
+    opacity: 0;
+}
+
+#news .role img {
+    object-fit: contain;
+}
+
+/* 在卡片hover時，控制場景樣式 */
+#news .card_item:hover {
+    padding-bottom: 4rem;
+}
+
+#news .card_item:hover .scenes {
+    /* perspective:視角(3D透視:z軸) 橫向水平旋轉X 傾斜度數*/
+    transform: perspective(1000px) rotateX(30deg) skewX(-20deg);
+}
+
+/* 在卡片hover時，控制角色樣式 */
+#news .card_item:hover .role {
+    /* scale:(縮放倍數) */
+    transform: scale(1.2);
+
+}
+
+#news .card_item:hover .content {
+    transform: translateY(4.5rem);
+    opacity: 1;
+}
+
+/* product區 */
+#product{
+background-image: url(../images/bg-pattern-logos.png), linear-gradient(-15deg, #bc00c7 16%, #23b2ff 76%);
+/* footer的設定，將容器撐開才不會覆蓋內容 */
+padding-bottom: 200px;
+}
+
+#product figure{
+    width: 100%;
+}
+#product .list_box{
+    margin-top: 5vh;
+}
+#product .card_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* 保持3D環境，需JQ */
+    transform-style: preserve-3d;
+}
+/* #product .card_item >*{} 如果用階層下的第一層，所有東西都會浮起來 */
+#product .role, #product .content, #product .btn {
+    /* Z軸3D旋轉角度 */
+    transform: translateZ(50px);
+}
+
+#product .role {
+    position: relative;
+    width: 100%;
+    height: 26vh;
+}
+
+#product .role img {
+    width: auto;
+    height: 150%;
+    position: absolute;
+    top: -12vh;
+    left: 2%;
+}
+
+#product .content {
+    /* 文字陰影 */
+    text-shadow: 0 0 20px #2a2929;
+}
+
+#product p {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    letter-spacing: .05rem;
+}
+
+#product .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px #2a2929;
+    border-radius: 38px;
+    background: linear-gradient(145deg, #f6f6f6, #cfcfcf);
+    box-shadow: 1px 1px 10px #c4c4c4,
+        1px 1px 10px #000000;
+}
+#product .btn:hover{
+    background: linear-gradient(145deg, #828282, #000000);
+}
+
+.point_t, .point_b{
+    position: absolute;
+    width: 100%;
+}
+.point_t::before, .point_t::after,
+.point_b::before, .point_b::after{
+    content: '';
+    background: linear-gradient(145deg, #f6f6f6, #cfcfcf);
+    box-shadow: 1px 1px 10px #c4c4c4,
+        1px 1px 10px #000000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+.point_t{
+    top: 25px;
+    left: 0;
+}
+.point_t::before{
+    content: '';
+    top: 0;
+    left: 15px;
+}
+.point_t::after{
+    content: '';
+    top: 0;
+    right: 15px;
+}
+
+.point_b{
+    bottom: 25px;
+    left: 0;
+}
+.point_b::before{
+    content: '';
+    bottom: 0;
+    left: 15px;
+}
+.point_b::after{
+    content: '';
+    bottom: 0;
+    right: 15px;
+}
+/* footer區 */
+footer{
+    position: relative;
+    height: 200px;
+    background-color: #e70112;
+    border:1px solid #e70112;
+    
+}
+footer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top:-200px;
+    z-index: 1;
+    width: 100%;
+    height: 200px;
+    background-color: #e70112;
+    /* 剪裁: polygon(左上角, 右上角, 右下角, 左下角) => 多邊形()*/
+    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
